@@ -1,0 +1,22 @@
+<form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
+  <label for="">SEARCH</label>
+  <input type="text" ngModel name="userSearch">
+  <button>Search</button>
+</form>
+
+<p>hello</p>
+
+<div *ngFor="let result of results">
+
+  <p>Title: {{ result.recipe.label }}</p>
+  <!-- <p>Author: {{ post.data.author }}</p>
+    <p>Upvotes: {{ post.data.ups }}</p>
+    <img src="{{ post.data.thumbnail }}" alt=""> -->
+
+</div>
+
+
+
+<recipe-list></recipe-list>
+
+<favorites-page></favorites-page>
