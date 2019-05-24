@@ -16,13 +16,27 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   searchRecipe(form) {
-    this.recipeService.getRecipeData(form.value.userSearch).subscribe(response => {
+    this.recipeService.getRecipeData(form.value.userSearch, form.value.dietSearch, form.value.calorieSearch).subscribe(response => {
       // console.log(response);
       this.results = response["hits"];
       console.log(this.results);
     });
   }
 
+  // searchLabel(form) {
+  //   this.recipeService.getHealthLabel(form.value.dietSearch).subscribe(response => {
+  //     // console.log(response);
+  //     this.results = response["hits"];
+  //     console.log(this.results);
+  //   });
+  // }
 
+  // searchCalories(form) {
+  //   this.recipeService.getCalories(form.value.calorieSearch).subscribe(response => {
+  //     // console.log(response);
+  //     this.results = response["hits"];
+  //     console.log(this.results);
+  //   });
+  // }
 
 }

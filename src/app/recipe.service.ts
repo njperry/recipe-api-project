@@ -12,8 +12,16 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  getRecipeData(userSearch: string) {
-    return this.http.get(`https://api.edamam.com/search?q=${userSearch}&app_id=${this.apiid}&app_key=${this.apikey}`);
+  getRecipeData(userSearch: string, dietSearch: string, calorieSearch: string) {
+    return this.http.get(`https://api.edamam.com/search?q=${userSearch}&app_id=${this.apiid}&app_key=${this.apikey}&calories=${calorieSearch}&health=${dietSearch}`);
   }
+
+  // getHealthLabel(dietSearch: string) {
+  //   return this.http.get(`https://api.edamam.com/search?q=&app_id=${this.apiid}&app_key=${this.apikey}&health=${dietSearch}`);
+  // }
+
+  // getCalories(calorieSearch: string) {
+  //   return this.http.get(`https://api.edamam.com/search?q=&app_id=${this.apiid}&app_key=${this.apikey}&calories=${calorieSearch}`);
+  // }
 
 }
