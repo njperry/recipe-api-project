@@ -23,10 +23,17 @@
 
 <div *ngFor="let result of results">
 
-  <img src= "{{ result.recipe.image }}" >
+  
+  <img src= "{{ result.recipe.image }}">
+
   <p>Title: {{ result.recipe.label }}</p>
   <p>Calories: {{ result.recipe.calories }}</p>
   <p>Tags: {{ result.recipe.healthLabels }}</p>
+  <a href="">More Information</a>
+  <!-- above goes through route to plain recipe page -->
+  <a href="">ADD To Favorites</a>
+  <!-- above goes through route to favorites page -->
+  <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
 
 </div>
 
