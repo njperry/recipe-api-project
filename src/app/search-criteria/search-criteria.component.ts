@@ -23,6 +23,10 @@ export class SearchCriteriaComponent implements OnInit {
     });
   }
 
+  addToFavorites() {
+    console.log("I am adding to your favorites");
+  }
+
   // searchLabel(form) {
   //   this.recipeService.getHealthLabel(form.value.dietSearch).subscribe(response => {
   //     // console.log(response);

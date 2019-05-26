@@ -1,12 +1,14 @@
+<div class="form">
 <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
-  <label for="">SEARCH For Keyword</label>
+  <label for="">Search by keyword:</label>
   <input type="text" ngModel name="userSearch">
-  <label for="">SEARCH by health label</label>
+  <label for="">Search by health label:</label>
   <input type="text" ngModel name="dietSearch">
-  <label for="">SEARCH by Max Calories</label>
+  <label for="">Search by max calories:</label>
   <input type="text" ngModel name="calorieSearch">
-  <button>Search</button>
+  <button class="search-button">Search</button>
 </form>
+</div>
 
 <!-- <form #dietaryForm="ngForm" (ngSubmit)="searchLabel(dietaryForm)">
   <label for="">SEARCH by health label</label>
@@ -20,24 +22,20 @@
   <button>Search</button>
 </form> -->
 
-
-<div *ngFor="let result of results">
-
-  
+<div class="recipe-div">
+<div *ngFor="let result of results; index as i" class="recipe-results">
   <img src= "{{ result.recipe.image }}">
-
   <p>Title: {{ result.recipe.label }}</p>
   <p>Calories: {{ result.recipe.calories }}</p>
   <p>Tags: {{ result.recipe.healthLabels }}</p>
   <a href="">More Information</a>
   <!-- above goes through route to plain recipe page -->
-  <a href="">ADD To Favorites</a>
-  <!-- above goes through route to favorites page -->
   <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
-
+  <button (click)="addToFavorites()" class="favorite-class"><i class="material-icons">favorite</i></button>
+  <!-- above goes through route to favorites page -->
+</div>
 </div>
 
+<!-- <recipe-list></recipe-list> -->
 
-<recipe-list></recipe-list>
-
-<favorites-page></favorites-page>
+<!-- <favorites-page></favorites-page> -->

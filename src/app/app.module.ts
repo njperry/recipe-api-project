@@ -6,7 +6,15 @@ import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
-import { FormsModule } from '@angular/forms'//added
+import { FormsModule } from '@angular/forms'; //added
+import { RouterModule, Routes } from '@angular/router' //added
+
+const appRoutes: Routes = [
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "home", component: SearchCriteriaComponent },
+  { path: "favorites", component: FavoritesPageComponent },
+  { path: "recipe/:id", component: RecipeListComponent }
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +26,8 @@ import { FormsModule } from '@angular/forms'//added
   imports: [
     BrowserModule, 
     HttpClientModule, //added
-    FormsModule //added
+    FormsModule, //added
+    RouterModule.forRoot(appRoutes) //added
   ],
   providers: [RecipeService], //added
   bootstrap: [AppComponent]

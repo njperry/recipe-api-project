@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  background-image: url("./assets/nom3background.jpg");  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: saturation;
+  font-family: 'Roboto', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'favorites-page', //deleted app
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesPageComponent implements OnInit {
 
-  constructor() { }
+  recipe: any;
+
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService) { }
 
   ngOnInit() {
+    // this.recipe = this.recipeService.getRecipe(
+    //   this.route.snapshot.paramMap.get("id")
+    // );
+    // console.log(this.recipe);
   }
 
 }
