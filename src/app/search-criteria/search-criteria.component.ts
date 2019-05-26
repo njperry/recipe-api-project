@@ -23,7 +23,8 @@ export class SearchCriteriaComponent implements OnInit {
     });
   }
 
-  addToFavorites() {
+  addFavorite(newFavorite: string): void {
+    this.results = this.recipeService.addFavorite(newFavorite);
     console.log("I am adding to your favorites");
   }
 

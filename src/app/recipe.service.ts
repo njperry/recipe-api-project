@@ -9,12 +9,17 @@ export class RecipeService {
   apikey: string = "974420c03fe6a73eec394c98500ec20b";
   apiid: string = "01d5bd21";
   
-  favorites: any[];
+  favorites: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   getRecipeData(userSearch: string, dietSearch: string, calorieSearch: string) {
     return this.http.get(`https://api.edamam.com/search?q=${userSearch}&app_id=${this.apiid}&app_key=${this.apikey}&from=0&to=9&calories=${calorieSearch}&health=${dietSearch}`);
+  }
+
+  addFavorite(newFavorite) {
+    console.log(newFavorite);
+    this.favorites.push(newFavorite);
   }
 
   // getRecipe(id: number | string): any {
