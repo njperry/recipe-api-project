@@ -9,15 +9,12 @@ import { RecipeService } from '../recipe.service';
 })
 export class FavoritesPageComponent implements OnInit {
 
-  recipe: any;
+  favorites: any[];
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService) { }
 
   ngOnInit() {
-    // this.recipe = this.recipeService.getRecipe(
-    //   this.route.snapshot.paramMap.get("id")
-    // );
-    // console.log(this.recipe);
+    this.favorites = this.recipeService.returnFavorites();
   }
 
 }

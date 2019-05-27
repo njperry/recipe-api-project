@@ -22,6 +22,10 @@ export class RecipeService {
     this.favorites.push(result);
   }
 
+  returnFavorites() {
+    return this.favorites;
+  }
+
   // getRecipe(id: number | string): any {
   //   let index = this.recipes.findIndex(recipe => recipe.id ==id)
   //   return this.recipes[index];

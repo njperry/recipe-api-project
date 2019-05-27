@@ -1,3 +1,8 @@
-<p>Title: {{ result.recipe.label }}</p>
-<p>Calories: {{ result.recipe.calories }}</p>
-<p>Tags: {{ result.recipe.healthLabels }}</p>
+<div class="recipe-div">
+<div *ngFor="let favorite of favorites" class="recipe-results">
+  <img src= "{{ favorite.recipe.image }}">
+  <p>Title: {{ favorite.recipe.label }}</p>
+  <p>Calories: {{ favorite.recipe.calories }}</p>
+  <p>Tags: {{ favorite.recipe.healthLabels }}</p>
+</div>
+</div>
