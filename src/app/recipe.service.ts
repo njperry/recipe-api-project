@@ -17,9 +17,9 @@ export class RecipeService {
     return this.http.get(`https://api.edamam.com/search?q=${userSearch}&app_id=${this.apiid}&app_key=${this.apikey}&from=0&to=9&calories=${calorieSearch}&health=${dietSearch}`);
   }
 
-  addFavorite(newFavorite) {
-    console.log(newFavorite);
-    this.favorites.push(newFavorite);
+  addToFavorites(result) {
+    console.log(result);
+    this.favorites.push(result);
   }
 
   // getRecipe(id: number | string): any {
