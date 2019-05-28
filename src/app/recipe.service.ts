@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { share, map } from "rxjs/operators";
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,11 @@ export class RecipeService {
 
   getRecipe(index: number | string): any {
     return this.results[index];
+  }
+
+  removeFromFavorites(i) {
+    console.log(i);
+    this.favorites.splice(i, 1); 
   }
 
   // getHealthLabel(dietSearch: string) {
