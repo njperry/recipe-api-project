@@ -3,28 +3,26 @@
     <label for="">Search by keyword:</label>
     <input type="text" ngModel name="userSearch" />
 
-    <!-- <label for="">Search by health label:</label>
-    <input type="text" ngModel name="dietSearch" /> -->
+    <!-- <input type="text" ngModel name="dietSearch" /> -->
 
     <label for="">Search by health label:</label>
-    <select name="" ngModel name="dietSearch">
+    <select (change)="selectDiet($event)">
       <option value="">Choose</option>
-      <option value="0">Vegan</option>
-      <option value="1">Vegetarian</option>
-      <option value="2">Gluten-Free</option>
-      <option value="3">Low-Sugar</option>
-      <option value="4">Peanut-Free</option>
+      <option value="vegan">Vegan</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="gluten-free">Gluten-Free</option>
+      <option value="low-sugar">Low-Sugar</option>
+      <option value="peanut-free">Peanut-Free</option>
     </select>
 
-    <!-- <label for="">Search by max calories:</label>
-    <input type="text" ngModel name="calorieSearch" /> -->
+    <!-- <input type="text" ngModel name="calorieSearch" /> -->
 
     <label for="">Search by calories:</label>
-    <select name="" ngModel name="calorieSearch">
+    <select (change)="selectCalories($event)">
       <option value="">Choose</option>
-      <option value="0">100-300</option>
-      <option value="1">300-500</option>
-      <option value="2">500-800</option>
+      <option value="100-300">100-300</option>
+      <option value="300-500">300-500</option>
+      <option value="500-800">500-800</option>
     </select>
 
     <button class="search-button">Search</button>

@@ -8,7 +8,7 @@ import { RecipeService } from '../recipe.service'; //added
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  results: any[];
+  results: any[] = [];
 
   constructor(private recipeService: RecipeService) { }
 
@@ -16,17 +16,33 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   searchRecipe(form) {
-    this.recipeService.getRecipeData(form.value.userSearch, form.value.dietSearch, form.value.calorieSearch).subscribe(response => {
+    this.recipeService.getRecipeData(form.value.userSearch, this.selectedDiet, this.selectedCalories).subscribe(response => {
       // console.log(response);
       this.results = response["hits"];
       console.log(this.results);
     });
   }
 
-  addFavorite(newFavorite: string): void {
-    this.results = this.recipeService.addFavorite(newFavorite);
-    console.log("I am adding to your favorites");
+  selectedDiet: string = '';
+
+  selectDiet (event: any) {
+    this.selectedDiet = event.target.value;
+    console.log(this.selectedDiet);
   }
+  
+  selectedCalories: string = '';
+
+  selectCalories (event: any) {
+    this.selectedCalories = event.target.value;
+    console.log(this.selectedCalories);
+  }
+
+  
+
+  // addFavorite(newFavorite: string) {
+  //   this.results = this.recipeService.addFavorite(newFavorite);
+  //   console.log("I am adding to your favorites");
+  // }
 
   // searchLabel(form) {
   //   this.recipeService.getHealthLabel(form.value.dietSearch).subscribe(response => {
