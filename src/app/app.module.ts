@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: SearchCriteriaComponent },
   { path: "favorites", component: FavoritesPageComponent },
-  { path: "recipe/:id", component: RecipeListComponent }
+  { path: "recipe/:index", component: RecipeListComponent }
 ];
 
 @NgModule({

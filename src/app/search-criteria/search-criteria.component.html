@@ -42,13 +42,15 @@
 </form> -->
 
 <div class="recipe-div">
-<div *ngFor="let result of results" class="recipe-results">
+<div *ngFor="let result of results; index as i" class="recipe-results">
   <img src= "{{ result.recipe.image }}">
   <p>Title: {{ result.recipe.label }}</p>
   <p>Calories: {{ result.recipe.calories }}</p>
   <p>Tags: {{ result.recipe.healthLabels }}</p>
-  <a href="">More Information</a>
-  <!-- above goes through route to plain recipe page -->
+  <!-- <a href="">More Information</a>
+  above goes through route to plain recipe page -->
+  <a [routerLink]="['/recipe', i]">More Information</a>
+
   <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
   <button (click)="addFavorite(result)" class="favorite-class"><i class="material-icons">favorite</i></button>
   <!-- above goes through route to favorites page -->

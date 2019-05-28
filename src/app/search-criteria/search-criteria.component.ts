@@ -16,10 +16,8 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   searchRecipe(form) {
-    this.recipeService.getRecipeData(form.value.userSearch, this.selectedDiet, this.selectedCalories).subscribe(response => {
-      // console.log(response);
-      this.results = response["hits"];
-      console.log(this.results);
+    this.recipeService.getRecipeData(form.value.userSearch, this.selectedDiet, this.selectedCalories).then(response => {
+      this.results = response;
     });
   }
 
