@@ -1,8 +1,34 @@
 <div class="recipe-div">
+    <div *ngFor="let favorite of favorites; index as i" class="recipe-results">
+        <img src="{{ favorite.recipe.image }}">
+        <p class="recipeTitle">{{ favorite.recipe.label }}</p>
+        <p>Calories: {{ favorite.recipe.calories.toFixed(0) }}</p>
+        <p>Total Time: {{ favorite.recipe.totalTime }}</p>
+        <p>Serves: {{ favorite.recipe.yield }}</p>
+        <p>Tags: {{ favorite.recipe.healthLabels }}</p>
+        <p>Source: {{ favorite.recipe.source }}</p>
+
+        <a [routerLink]="['/recipe', i]">More Information</a>
+
+        <a href="{{ favorite.recipe.url }}" target="_blank">View Full Recipe</a>
+
+    </div>
+</div>
+
+<!-- <div class="recipe-div">
     <div *ngFor="let favorite of favorites" class="recipe-results">
         <img src="{{ favorite.recipe.image }}">
         <p class="recipeTitle">{{ favorite.recipe.label }}</p>
         <p>Calories: {{ favorite.recipe.calories.toFixed(0) }}</p>
+        <p>Total Time: {{ favorite.recipe.totalTime }}</p>
+        <p>Serves: {{ favorite.recipe.yield }}</p>
+        <p>Ingredients:</p>
+        <ul *ngFor="let ingredient of recipe.recipe.ingredientLines">
+            <li>
+                {{ ingredient }}
+            </li>
+        </ul>
         <p>Tags: {{ favorite.recipe.healthLabels }}</p>
+        <p>Source: {{ favorite.recipe.source }}</p>
     </div>
-</div>
+</div> -->
