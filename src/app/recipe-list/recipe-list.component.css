@@ -20,5 +20,26 @@
 p {
     color: white;
     font-size: 16px;
-    margin: 0;
+    margin: 6px;
 }
+
+.recipeTitle {
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+a,
+a:visited {
+    color: white;
+    margin-top: 8px;
+}
+
+ul {
+    color: white;
+    margin: 0px;
+}
+
+
+/* li {
+    margin: 0px;
+} */

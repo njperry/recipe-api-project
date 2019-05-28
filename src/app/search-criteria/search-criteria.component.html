@@ -1,12 +1,12 @@
 <div class="form">
-  <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
-    <label for="">Search by keyword:</label>
-    <input type="text" ngModel name="userSearch" />
+    <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
+        <label for="">Search by keyword:</label>
+        <input type="text" ngModel name="userSearch" />
 
-    <!-- <input type="text" ngModel name="dietSearch" /> -->
+        <!-- <input type="text" ngModel name="dietSearch" /> -->
 
-    <label for="">Search by health label:</label>
-    <select (change)="selectDiet($event)">
+        <label for="">Search by health label:</label>
+        <select (change)="selectDiet($event)">
       <option value="">Choose</option>
       <option value="vegan">Vegan</option>
       <option value="vegetarian">Vegetarian</option>
@@ -15,18 +15,18 @@
       <option value="peanut-free">Peanut-Free</option>
     </select>
 
-    <!-- <input type="text" ngModel name="calorieSearch" /> -->
+        <!-- <input type="text" ngModel name="calorieSearch" /> -->
 
-    <label for="">Search by calories per serving:</label>
-    <select (change)="selectCalories($event)">
+        <label for="">Search by calories per serving:</label>
+        <select (change)="selectCalories($event)">
       <option value="">Choose</option>
       <option value="100-300">100-300</option>
       <option value="300-500">300-500</option>
       <option value="500-800">500-800</option>
     </select>
 
-    <button class="search-button">Search</button>
-  </form>
+        <button class="search-button">Search</button>
+    </form>
 </div>
 
 <!-- <form #dietaryForm="ngForm" (ngSubmit)="searchLabel(dietaryForm)">
@@ -42,19 +42,19 @@
 </form> -->
 
 <div class="recipe-div">
-<div *ngFor="let result of results; index as i" class="recipe-results">
-  <img src= "{{ result.recipe.image }}">
-  <p>Title: {{ result.recipe.label }}</p>
-  <p>Calories: {{ result.recipe.calories }}</p>
-  <p>Tags: {{ result.recipe.healthLabels }}</p>
-  <!-- <a href="">More Information</a>
+    <div *ngFor="let result of results; index as i" class="recipe-results">
+        <img src="{{ result.recipe.image }}">
+        <p class="recipeTitle">{{ result.recipe.label }}</p>
+        <p>Calories: {{ result.recipe.calories.toFixed(0) }}</p>
+        <p>Tags: {{ result.recipe.healthLabels }}</p>
+        <!-- <a href="">More Information</a>
   above goes through route to plain recipe page -->
-  <a [routerLink]="['/recipe', i]">More Information</a>
+        <a [routerLink]="['/recipe', i]">More Information</a>
 
-  <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
-  <button (click)="addFavorite(result)" class="favorite-class"><i class="material-icons">favorite</i></button>
-  <!-- above goes through route to favorites page -->
-</div>
+        <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
+        <button (click)="addFavorite(result)" class="favorite-class"><i class="material-icons">favorite</i></button>
+        <!-- above goes through route to favorites page -->
+    </div>
 </div>
 
 <!-- <recipe-list></recipe-list> -->

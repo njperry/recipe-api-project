@@ -1,8 +1,8 @@
 <div class="recipe-div">
     <div class="recipe-results">
         <img src="{{ recipe.recipe.image }}">
-        <p>Title: {{ recipe.recipe.label }}</p>
-        <p>Calories: {{ recipe.recipe.calories }}</p>
+        <p class="recipeTitle">{{ recipe.recipe.label }}</p>
+        <p>Calories: {{ recipe.recipe.calories.toFixed(0) }}</p>
         <p>Total Time: {{ recipe.recipe.totalTime }}</p>
         <p>Serves: {{ recipe.recipe.yield }}</p>
         <p>Ingredients:</p>
