@@ -35,8 +35,9 @@ export class SearchCriteriaComponent implements OnInit {
     console.log(this.selectedCalories);
   }
 
-  addFavorite(result: string): void {
-    this.recipeService.addToFavorites(result);
+  addFavorite(result: string, index: number): void {
+    this.recipeService.addToFavorites(result, index);
+    this.results[index].favorited = true;
   
 
   // addFavorite(newFavorite: string) {

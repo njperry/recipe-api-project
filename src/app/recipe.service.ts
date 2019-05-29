@@ -13,6 +13,7 @@ export class RecipeService {
   
   favorites: any[] = [];
   results: any[] = [];
+  
 
   constructor(private http: HttpClient) {}
 
@@ -24,9 +25,11 @@ export class RecipeService {
     })
   }
 
-  addToFavorites(result) {
-    console.log(result);
+  addToFavorites(result, index) {
+    console.log(result, index);
     this.favorites.push(result);
+    console.log(this.favorites);
+    this.results[index].favorited = true;
   }
 
   returnFavorites() {

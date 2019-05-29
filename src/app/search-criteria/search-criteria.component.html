@@ -52,7 +52,7 @@
         <a [routerLink]="['/recipe', i]">More Information</a>
 
         <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
-        <button (click)="addFavorite(result)" class="favorite-class"><i class="material-icons">favorite</i></button>
+        <button (click)="addFavorite(result, i)" class="favorite-class"><i class="material-icons" [ngClass]="{'favorite': result.favorited}">favorite</i></button>
         <!-- above goes through route to favorites page -->
     </div>
 </div>

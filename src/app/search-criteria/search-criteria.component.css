@@ -87,3 +87,7 @@ a:visited {
     color: white;
     margin-top: 8px;
 }
+
+.favorite {
+    color: rgb(56, 12, 29);
+}
