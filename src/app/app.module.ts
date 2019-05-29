@@ -9,6 +9,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
 import { FormsModule } from '@angular/forms'; //added
 import { RouterModule, Routes } from '@angular/router' //added
 
+// this variable stores all of our routes as objects in the appRoutes array
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: SearchCriteriaComponent },

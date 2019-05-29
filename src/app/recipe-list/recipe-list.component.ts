@@ -9,16 +9,17 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
+  // this allows us to call on our recipe service and set it to a variable
   recipe: any;
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService) { }
 
+  // this method calls on initialization, and sets the recipe variable to the result of calling on the getRecipe method in the service
   ngOnInit() {
     this.recipe = this.recipeService.getRecipe(
       this.route.snapshot.paramMap.get("index")
     );
     console.log(this.recipe);
-    // console.log(this.recipeService.getRecipe(0));
   }
 
 }
