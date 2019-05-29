@@ -37,7 +37,7 @@ export class RecipeService {
   }
 
   getRecipe(index: number | string): any {
-    return this.results[index];
+    return this.favorites[index];
   }
 
   removeFromFavorites(i) {

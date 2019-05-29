@@ -20,5 +20,4 @@ export class FavoritesPageComponent implements OnInit {
   deleteFavorite(favorite) {
     this.recipeService.removeFromFavorites(favorite);
   }
-
 }

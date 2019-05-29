@@ -49,7 +49,7 @@
         <p>Tags: {{ result.recipe.healthLabels }}</p>
         <!-- <a href="">More Information</a>
   above goes through route to plain recipe page -->
-        <a [routerLink]="['/recipe', i]">More Information</a>
+        <!-- <a [routerLink]="['/recipe', i]">More Information</a> -->
 
         <a href="{{ result.recipe.url }}" target="_blank">View Full Recipe</a>
         <button (click)="addFavorite(result, i)" class="favorite-class"><i class="material-icons" [ngClass]="{'favorite': result.favorited}">favorite</i></button>
